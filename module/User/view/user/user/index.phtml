@@ -1,0 +1,52 @@
+<?php
+ // module/Album/view/album/album/index.phtml:
+ $title = 'Welcome';
+ $this->headTitle($title);
+ if($this->fail){
+ ?>
+ <div class="alert alert-fail"><?php echo $this->fail;?></div>
+ <?php 	
+ }
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+
+ <form class="form-horizontal" role="form" action="" method="post">
+  <div class="form-group">
+    <label for="username" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="username" name = "username" placeholder="Email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="password" name = "password" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default" name="submit" value="login">Log in</button>
+    <button type="submit"class="btn btn-default" name = "submit" value="signup">Sign up</button>
+    </div>
+  </div>
+</form>
+<?php 
+//  $form->setAttribute('action', $this->url('user', array('action' => 'index')));
+//  $form->prepare();
+
+//  echo $this->form()->openTag($form);
+//  echo $this->formHidden($form->get('id'));
+//  echo $this->formRow($form->get('username'));
+//  echo $this->formRow($form->get('password'));
+//  echo $this->formSubmit($form->get('submit'));
+//  echo $this->form()->closeTag();
+ 
