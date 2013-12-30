@@ -6,6 +6,10 @@ use Zend\View\Model\ViewModel;
 use User\Model\User; // <-- Add this import
 use User\Form\UserForm;
 
+/**
+ * @author shen
+ *
+ */
 class UserController extends AbstractActionController {
 	protected $userTable;
 	public function indexAction() {
@@ -21,7 +25,7 @@ class UserController extends AbstractActionController {
 			$password = $request->getPost ( 'password' );
 			$user = $this->getUserTable ()->getUser ( $username, $password );
 			if (! isset ( $user->fail )) {
-				setcookie("username", $username,time()+3600);
+				setcookie("username", $username,time()+3600); // set cookie
 				return $this->redirect ()->toUrl ( 'http://localhost/myZend/public' );
 			}
 			// Redirect to list of albums

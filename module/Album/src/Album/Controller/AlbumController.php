@@ -14,6 +14,7 @@ class AlbumController extends AbstractActionController {
 			$username = $_COOKIE['username'];
 		}else{
 		 	$this->redirect ()->toUrl ( 'http://localhost/myZend/public/user' );
+// 			return $this->redirect ()->toRoute ( 'album' );
 		}
 		return new ViewModel ( array (
 				'albums' => $this->getAlbumTable ()->fetchAll () ,
