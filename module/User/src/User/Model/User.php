@@ -14,13 +14,20 @@ namespace User\Model;
      protected $inputFilter;                       // <-- Add this variable
      public function exchangeArray($data)
      {
+//      	die();
          $this->id     = (isset($data['id']))     ? $data['id']     : null;
          $this->username = (isset($data['username'])) ? $data['username'] : null;
-         $this->password  = (isset($data['password']))  ? md5($data['password'])  : null;
+         $this->password  = (isset($data['password']))  ? $data['password']  : null;
      }
+     
      public function setInputFilter(InputFilterInterface $inputFilter)
      {
      	throw new \Exception("Not used");
+     }
+     
+     public function getArrayCopy()
+     {
+     	return get_object_vars($this);
      }
      
      public function getInputFilter()
