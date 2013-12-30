@@ -75,3 +75,9 @@ project and you should be ready to go! It should look something like below:
             Allow from all
         </Directory>
     </VirtualHost>
+
+
+What I have done
+=======================
+I added a user module with sign up , log in and profile page;
+
