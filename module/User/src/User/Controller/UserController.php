@@ -21,9 +21,11 @@ class UserController extends AbstractActionController {
 			$password = $request->getPost ( 'password' );
 			$user = $this->getUserTable ()->getUser ( $username, $password );
 			if (! isset ( $user->fail )) {
+				setcookie("username", $username,time()+3600);
 				return $this->redirect ()->toUrl ( 'http://localhost/myZend/public' );
 			}
 			// Redirect to list of albums
+			
 			return $this->redirect ()->toUrl ( 'http://localhost/myZend/public/user' );
 		}
 // 		return array (

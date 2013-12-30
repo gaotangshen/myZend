@@ -10,8 +10,14 @@ use Album\Form\AlbumForm;
 class AlbumController extends AbstractActionController {
 	protected $albumTable;
 	public function indexAction() {
+		if(isset($_COOKIE['username'])){
+			$username = $_COOKIE['username'];
+		}else{
+		 	$this->redirect ()->toUrl ( 'http://localhost/myZend/public/user' );
+		}
 		return new ViewModel ( array (
-				'albums' => $this->getAlbumTable ()->fetchAll () 
+				'albums' => $this->getAlbumTable ()->fetchAll () ,
+				'username'=>$username
 		) );
 	}
 	public function addAction() {
