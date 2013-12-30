@@ -1,11 +1,11 @@
 <?php
  // module/Album/view/album/album/index.phtml:
- $title = 'My albums';
+ $title = 'My Albums';
  $this->headTitle($title);
  
  ?>
  <h1><?php echo $this->escapeHtml($title); ?></h1>
- <h2><?php echo $this->escapeHtml($username); ?></h2>
+ <h4><?php echo $this->escapeHtml($username); ?></h4>
  <p>
      <a href="<?php echo $this->url('album', array('action'=>'add'));?>">Add new album</a>
  </p>
